@@ -31,8 +31,7 @@ const Header = () => {
 
         {
             label: "Contacto",
-            // href: "/contacto"
-            href: "/"
+            href: "/contacto"
         }, 
 
 

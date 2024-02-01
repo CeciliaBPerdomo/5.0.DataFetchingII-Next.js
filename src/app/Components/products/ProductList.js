@@ -6,7 +6,7 @@ const ProductsList = async ({categoria}) => {
         cache: "no-store" // la informacion que sea siempre actualizada
     })
     .then(r => r.json())
-    console.log(items)
+    //console.log(items)
 
 
 // cambio mockdata -- por la respuesta que llega desde la ruta
