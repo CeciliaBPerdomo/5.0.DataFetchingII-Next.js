@@ -12,7 +12,7 @@ export async function GET(request, {params}) {
     const data = categoria === "todos" ? mockData: mockData.filter(item => item.type === categoria)
     
     await sleep(1000)
-    //revalidateTag("productos")                // --> por tag, pasada desde el ftch de product list
-    revalidatePath("/productos/[categoria]")    //--> revalida nuestro cache cada vez que ingresa a esa ruta
+    revalidateTag("productos")                      // --> por tag, pasada desde el fetch de product list
+    //revalidatePath("/productos/[categoria]")      //--> revalida nuestro cache cada vez que ingresa a esa ruta
     return NextResponse.json(data)
 }

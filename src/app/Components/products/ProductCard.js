@@ -4,7 +4,7 @@ import Link from "next/link"
 const ProductCard = ({ item }) => {
     return (
         <article className="basis-72 shadow-lg rounded">
-            <Link href={`/productos/details/${item.slug}`} className="flex flex-col">
+            <Link href={`/productos/detail/${item.slug}`} className="flex flex-col">
                 <Image
                     alt={item.title}
                     src={`/imgs/products/${item.image}`}

@@ -1,10 +1,13 @@
-import { mockData } from "../data/products";
 import Image from "next/image";
 
-
-const ProductDetail = ({ slug }) => {
-    const item = mockData.find(p => p.slug === slug)
-    console.log(item)
+const ProductDetail = async ({ slug }) => {
+    console.log(slug)
+    
+    const item = await fetch(`http://localhost:3000/api/product/${slug}`, {
+        cache: "no-store",
+        next: {revalidate: 0}
+    })
+    .then(res => res.json())
     return (
         <div className="max-w-4xl m-auto">
             {/* Go back falta aca */}
