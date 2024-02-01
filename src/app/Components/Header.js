@@ -21,8 +21,7 @@ const Header = () => {
 
         {
             label: "Nosotros",
-            href: "/"
-            //href: "/nosotros"
+            href: "/nosotros"
         },
 
         {
