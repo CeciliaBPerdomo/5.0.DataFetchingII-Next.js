@@ -3,7 +3,10 @@ import ProductCard from "./ProductCard";
 
 const ProductsList = async ({categoria}) => {
     const items = await fetch(`http://localhost:3000/api/productos/${categoria}`, {
-        cache: "no-store" // la informacion que sea siempre actualizada
+        cache: "no-store", // la informacion que sea siempre actualizada
+        next: {
+            tags: ["productos"]
+        }
     })
     .then(r => r.json())
     //console.log(items)
