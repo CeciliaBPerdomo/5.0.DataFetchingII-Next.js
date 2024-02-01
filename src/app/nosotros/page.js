@@ -14,7 +14,7 @@ const Nosotros = () => {
     <div>
       <main className='container m-auto'>
         <h1 className='text-4xl text-blue-600 text-bold my-4'>
-          Bienvenido a la página "Nosotros"
+          Bienvenido a la página Nosotros
         </h1>
         <hr />
         <p className='text-base mt-4'>
