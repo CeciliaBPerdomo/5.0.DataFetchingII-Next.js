@@ -1,4 +1,6 @@
 import Image from "next/image";
+import GoBack from "../GoBack";
+import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ slug }) => {
     console.log(slug)
@@ -17,7 +19,7 @@ const ProductDetail = async ({ slug }) => {
 
     return (
         <div className="max-w-6xl m-auto border border-gray-200 p-6">
-            {/* Go back falta aca */}
+            <GoBack />
             <section className="flex gap-6">
                 <div className="relative basis-1/2">
                     <Image
@@ -28,14 +30,17 @@ const ProductDetail = async ({ slug }) => {
                     />
                 </div>
                 <div className="basis-1/2">
-                    <h2 className="text-2xl font-semibold border-b border-gray-200 pb-4 mb-4 mt-16">
+                    <h2 className="text-2xl font-semibold pb-4 mb-4 mt-16 text-center">
                         {item.title}
                     </h2>
+                    <p className="text-4xl font-semibold border-b border-gray-200 pb-2 text-center text-blue-400">$ {item.price}</p>
+                    {/* <hr /> */}
+                    <QtySelector item={item} />
                 </div>
             </section>
             <section className="mt-12">
                 <h3 className="text-xl font-semibold border-b border-gray-200 pb-4 my-4">
-                    Descripción
+                    Descripción:
                 </h3>
                 <p className="text-gray-600">
                     {item.description}
