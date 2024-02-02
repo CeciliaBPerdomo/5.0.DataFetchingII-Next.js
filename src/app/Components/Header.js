@@ -43,7 +43,7 @@ const Header = () => {
     // py-6: padding en el eje y de 6
     return (
         <div>
-            <header className="w-full py-6 bg-blue-300">
+            <header className="w-full py-6 bg-blue-300 border-b border-blue-600">
                 <div className='container m-auto flex justify-between items-center'>
                     <p className='text-4xl text-bold text-slate-100'>
                         <Link href={"/"}>

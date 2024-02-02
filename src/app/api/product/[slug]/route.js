@@ -5,9 +5,8 @@ const sleep = (timer) => {
     return new Promise((resolve) => setTimeout(resolve, timer))
 }
 
-export async function GET(request, {params}) {
+export async function GET(_, {params}) {
     const {slug} = params
-    console.log(slug)
     const data = mockData.find(product => product.slug === slug)
     
     await sleep(1000) // simula una carga asincronica

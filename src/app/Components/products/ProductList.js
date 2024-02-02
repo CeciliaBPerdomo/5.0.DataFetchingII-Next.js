@@ -9,10 +9,8 @@ const ProductsList = async ({categoria}) => {
         }
     })
     .then(r => r.json())
-    //console.log(items)
 
-
-// cambio mockdata -- por la respuesta que llega desde la ruta
+    // cambio mockdata -- por la respuesta que llega desde la ruta
     // const items = categoria === "todos" ? data : data.filter(item => item.type === categoria)
 
     return (
