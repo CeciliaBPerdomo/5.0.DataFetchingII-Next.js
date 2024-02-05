@@ -1,18 +1,19 @@
 import { NextResponse } from "next/server";
-import { mockData } from "@/app/Components/data/products";
-import { revalidateTag, revalidatePath } from "next/cache";
-
-const sleep = (timer) => {
-    return new Promise((resolve) => setTimeout(resolve, timer))
-}
+import { collection, getDocs, query } from "firebase/firestore"
+import { db } from "@/app/firebase/config"
 
 // Esto habilita que nuestros productos pueda manejar peticiones
-export async function GET(request, {params}) {
-    const {categoria} = params
-    const data = categoria === "todos" ? mockData: mockData.filter(item => item.type === categoria)
-    
-    await sleep(1000)
-    revalidateTag("productos")                      // --> por tag, pasada desde el fetch de product list
-    //revalidatePath("/productos/[categoria]")      //--> revalida nuestro cache cada vez que ingresa a esa ruta
-    return NextResponse.json(data)
+export async function GET(request, { params }) {
+    const { categoria } = params
+    const productosRef = collection(db, "productos")
+
+    const q = categoria === "todos" 
+    ? productosRef 
+    : query(productosRef, where("type", "==", categoria))
+
+    console.log(q)
+
+    const querySnapShot = await getDocs(q)
+    const docs = querySnapShot.docs.map(doc => doc.data())
+    return NextResponse.json(docs)
 }

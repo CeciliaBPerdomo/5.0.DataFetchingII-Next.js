@@ -19,7 +19,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app) // Luego de crear la bd en firestore
 
+export { db };
 /* 
 Pasos para crear la base de datos: 
-
+Reglas -- cambiar a un a;o
+Colecciones
 */
