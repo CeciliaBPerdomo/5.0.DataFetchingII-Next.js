@@ -34,7 +34,6 @@ const ProductDetail = async ({ slug }) => {
                         {item.title}
                     </h2>
                     <p className="text-4xl font-semibold border-b border-gray-200 pb-2 text-center text-blue-400">$ {item.price}</p>
-                    {/* <hr /> */}
                     <QtySelector item={item} />
                 </div>
             </section>
