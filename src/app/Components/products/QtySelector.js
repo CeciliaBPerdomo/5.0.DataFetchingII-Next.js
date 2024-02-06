@@ -2,12 +2,19 @@
 import { useState } from "react"
 import Boton from "../Boton"
 import Counter from "../Counter"
+import { useCartContext } from "../Context/CartContext"
 
 function QtySelector({ item }) {
+    const {addToCart} = useCartContext()
+
     const [quantity, setQuantity] = useState(1)
 
     const handleAdd = () => {
-        console.log({
+        // console.log({
+        //     ...item,
+        //     quantity
+        // })
+        addToCart({
             ...item,
             quantity
         })

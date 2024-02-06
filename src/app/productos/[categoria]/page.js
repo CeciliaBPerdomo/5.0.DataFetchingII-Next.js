@@ -2,6 +2,7 @@ import CategoriesMenu from "@/app/Components/products/CategoriesMenu"
 import ProductsList from "@/app/Components/products/ProductList"
 import { Suspense } from "react"
 
+// Comienzo de metadata
 export async function generateMetadata({ params, searchParams }, parent) {
     return {
         title: `Productos - ${params.categoria}`
@@ -19,6 +20,8 @@ export function generateStaticParams() {
 }
 
 export const revalidate = 3600
+
+// Fin de metadata
 
 const Productos = ({ params }) => {
     const { categoria } = params

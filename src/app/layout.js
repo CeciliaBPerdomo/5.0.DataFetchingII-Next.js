@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import "./globals.css";
+import { CartProvider } from "./Components/Context/CartContext";
 
 export const metadata = {
   title: "Fetching Data I",
@@ -11,10 +12,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
-        </body>
+        {/* Para que se pueda acceder desde cualquier lugar */}
+        <CartProvider> 
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
+      </body>
     </html>
   );
 }
