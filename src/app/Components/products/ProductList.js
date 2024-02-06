@@ -21,12 +21,13 @@ const ProductsList = async ({ categoria }) => {
             )
         } else {
             console.error('Cadena JSON vacía o indefinida.');
+            return <p>No hay productos para esta categoria.</p>;
         }
     } catch (error) {
         console.error('Error al obtener datos:', error);
     }
 
-    return <p>Error al cargar los productos.</p>;
+    return <p>No hay productos para esta categoria.</p>;
 }
 
 export default ProductsList
