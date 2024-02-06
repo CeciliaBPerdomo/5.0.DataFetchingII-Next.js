@@ -3,6 +3,7 @@ import Image from 'next/image';                 // Imagenes
 import React from 'react';                      // React 
 import Link from 'next/link';                   // Link
 import { usePathname } from 'next/navigation';  // Links activos
+import CartWidget from './CartWidget';
 
 
 const Header = () => {
@@ -68,6 +69,7 @@ const Header = () => {
                                 </Link>
                              )
                         })}
+                        <CartWidget />
                     </nav>
                 </div>
             </header>
